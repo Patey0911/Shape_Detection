@@ -28,5 +28,4 @@ while(True):
         break
 
 
-
 cv2.destroyAllWindows()
