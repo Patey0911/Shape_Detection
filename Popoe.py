@@ -12,10 +12,10 @@ while(True):
     l_h = cv2.getTrackbarPos("L-H", "Trackbars")
     u_s = cv2.getTrackbarPos("U-S", "Trackbars")
     imgGrey=cv2.cvtColor(frame1, cv2.COLOR_BGR2GRAY)
-    _,thrash=cv2.threshold(imgGrey, 61, 250,cv2.THRESH_BINARY)
+    _,thrash=cv2.threshold(imgGrey, 130, 250,cv2.THRESH_BINARY)
     contours,_=cv2.findContours(thrash, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     for contour in contours:
-        approx=cv2.approxPolyDP(contour, 0.12* cv2.arcLength(contour, True), True)
+        approx=cv2.approxPolyDP(contour, 0.1* cv2.arcLength(contour, True), True)
         if (cv2.contourArea(contour)>1000 and cv2.contourArea(contour)<30000 and len(approx)>2):
             cv2.drawContours(frame1, [approx], 0, (0,0,255), 3)
             x=approx.ravel()[0]
