@@ -26,9 +26,9 @@ while(True):
                 x ,y, w, h = cv2.boundingRect(approx)
                 aspectRatio = float(w)/float(h)
                 if aspectRatio >= 0.8 and aspectRatio <= 1.2:
-                    cv2.putText(frame1, 'Patrat', (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (204, 0, 0), 2)
+                    cv2.putText(frame1, 'Patrat', (x, y), cv2.FONT_HERSHEY_SIMPLEX, 2, (204, 0, 0), 5, cv2.LINE_AA)
                 else:
-                    cv2.putText(frame1, 'Dreptunghi', (x, y), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 255, 255), 2,)
+                    cv2.putText(frame1, 'Dreptunghi', (x, y), cv2.FONT_HERSHEY_COMPLEX, 2, (0, 255, 255), 5, cv2.LINE_AA)
     cv2.imshow('video', frame1)
     cv2.imshow('vid', thrash)
     ret, frame1 = img.read()
